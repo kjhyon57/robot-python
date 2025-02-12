@@ -31,6 +31,7 @@ for number in (1, 100)
             break
         else:
             user_turn = False
+    #컴퓨터 입력
     else:
         computer_answer = check_computer_answer(number)
         print("컴퓨터 차례: ", computer_answer)

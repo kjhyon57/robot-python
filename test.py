@@ -1,52 +1,37 @@
-import random
+# 3 6 9 게임
 
-# 3 6 9ㅇㅇ
-
-
-# 사용자는 input() 함수를 통해 해당 숫자 혹은 3. 6. 9 가 들어가는 곳에서는 "짝"을 입력해야 함.
-
+'''
+1씩 숫자가 증가하는데 해당 차례의 숫자에 3, 6, 9 가 없으면 숫자를 입력하고,
+숫자에 3, 6, 9 가 있으면 그 갯수만큼 "짝"을 입력해야 함.
+'''
+# 사용자가 숫자를 입력하는 메소드 정의
 def user_input():
-  return input("사용자 차례: ")
+    return input("사용자 차례: ")
 
+# (사용자던, 컴퓨터이던) 차례숫자에 369가 들어가 있는지, 갯수가 몇개인지 확인하는 메소드 정의
 def check_369(number):
-  number = str(number)
-  clap_count = 0
-  for i in range(len(number)):
-    if number[i] == "3" or number[i] == "6" or number[i] == "9":
-      clap_count += 1
+    clap = check_369(number)
+    if clap:
 
-  return clap_count
+# (사용자던, 컴퓨터이던)차례숫자와 입력숫자의 동일여부 확인하는 메소드 정의
 
-def check_correct(now_number, answer):
-  clap = check_369(now_number)
-  if clap:
-    if answer == '짝'*clap:
-      print("")
-      return True
+ 
+# 컴퓨터 차례숫자에 입력할 숫자 또는 짝 숫자를 부여하는 메소드 정의
 
-    else:
-      return False
-  else:
-    return now_number == answer
 
-def change_computer_answer(number):
-  clap = check_369(number)
-  if clap:
-    return "짝"*clap
-  else:
-    return number
-
+#게임 시작 및 숫자를 하나씩 증가하며 입력숫자를 부여하는 프로그램 작성 
 print("시작")
 user_turn = True
-for now_number in range(1,100):
-  now_number = str(now_number)
-  if user_turn:
-    user_answer = user_input()
-    if not check_correct(now_number, user_answer):
-      print("패배")
-      break
-    user_turn = False
-  else:
-    computer_answer = change_computer_answer(now_number)
-    print("컴퓨터 차례 : ", computer_answer)
-    user_turn = True
+for number in (1, 100)
+    number = str(number)
+    if user_turn:
+        answer = user_input()
+        if not check_correct(number, answer):
+            print("패배")
+            break
+        else:
+            user_turn = False
+    else:
+        computer_answer = check_computer_answer(number)
+        print("컴퓨터 차례: ", computer_answer)
+        user_turn = True

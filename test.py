@@ -19,9 +19,10 @@ def check_369(number):
 # 컴퓨터 차례숫자에 입력할 숫자 또는 짝 숫자를 부여하는 메소드 정의
 
 
-#게임 시작 및 숫자를 하나씩 증가하며 입력숫자를 부여하는 프로그램 작성 
+#게임 시작 및 숫자를 하나씩 증가하며 사용자와 컴퓨터가 입력숫자를 부여하는 프로그램 작성 
 print("시작")
 user_turn = True
+#사용자가 숫자를 입력하게 하고 차례숫자와 입력숫자를 비교한 확인결과를 반환하는 프로그램
 for number in (1, 100)
     number = str(number)
     if user_turn:
@@ -31,7 +32,7 @@ for number in (1, 100)
             break
         else:
             user_turn = False
-    #컴퓨터 입력
+#컴퓨터 입력숫자를 표시하는 프로그램
     else:
         computer_answer = check_computer_answer(number)
         print("컴퓨터 차례: ", computer_answer)
